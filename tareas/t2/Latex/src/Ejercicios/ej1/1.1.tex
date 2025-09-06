@@ -1,6 +1,247 @@
 \textbf{Por favor deriva con procedimiento los siguientes estados cuánticos:
 $\ket{\psi}_0, \ket{\psi}_1$, $\ket{\psi}_2\ket{\psi}_3$ y $\ket{\psi}_4$.}\vspace{.2cm}
 
-\textcolor{bibi}{}
-\begin{quote}
-\end{quote}
+\textcolor{bibi}{Siguiendo las notas del curso}\vspace{.2cm}
+
+\begin{itemize}
+    \item $\mathbf{\ket{\psi_0}}$ \vspace{.3cm}
+        
+        Calculamos el estado de los 3 qubits antes de operar:
+
+        \begin{align*}
+            \ket{\psi_0} &= \ket{\psi} \otimes \ket{\beta_{02}} \\
+            &= (\alpha\ket{0} + \beta\ket{1}) \otimes
+            \left(\frac{\ket{01}+\ket{10}}{\sqrt{2}}\right)\\
+            &=
+            \mathcolorbox{yellow}{\frac{1}{\sqrt{2}}\left(\alpha\ket{001}+\alpha\ket{010}+\beta\ket{101}+\beta\ket{110}\right)}\\
+        \end{align*}        
+
+    \item $\mathbf{\ket{\psi_1}}$\vspace{.3cm}
+
+        Aplicamos $C_{NOT}$ a los primeros 2 qubits e $\mathbb{I}$ al tercero:
+
+        \begin{align*}
+            \ket{\psi_1} &= \hat{C}_{NOT} \otimes \hat{\mathbb{I}} \ket{\psi_0} \\
+            &= (\hat{C}_{NOT} \otimes \hat{\mathbb{I}})
+            \left(\frac{1}{\sqrt{2}}\left(\alpha\ket{00}\ket{1}+\alpha\ket{01}\ket{0}+\beta\ket{10}\ket{1}+\beta\ket{11}\ket{0}\right)\right)
+            \\
+            &= \frac{1}{\sqrt{2}}\left(\alpha\ket{00}\ket{1}+\alpha\ket{01}\ket{0}+\beta\ket{11}\ket{1}+\beta\ket{10}\ket{0}\right)
+            \\
+            &=\mathcolorbox{yellow}{\frac{1}{\sqrt{2}}\left(\alpha\ket{001}+\alpha\ket{010}+\beta\ket{111}+\beta\ket{100}\right)}
+            \\
+        \end{align*}
+
+    \item $\mathbf{\ket{\psi_2}}$\vspace{.3cm}
+
+        Aplicamos la compuerta $\hat{H}$ al primer qubit y las compuertas $\hat{\mathbb{I}}$ al
+        2ndo y 3ero:
+
+        \begin{align*}
+            \ket{\psi_2} &= (\hat{H} \otimes \hat{\mathbb{I}}\otimes \hat{\mathbb{I}}) \ket{\psi_1} \\
+            &= (\hat{H} \otimes \hat{\mathbb{I}}\otimes \hat{\mathbb{I}})
+            \left(\frac{1}{\sqrt{2}}\left(\alpha\ket{0}\ket{01}+\alpha\ket{0}\ket{10}+\beta\ket{1}\ket{11}+\beta\ket{1}\ket{00}\right)\right) \\
+            &=\frac{1}{\sqrt{2}}\left(\alpha\left(\frac{\ket{0}+\ket{1}}{\sqrt{2}}\right)\ket{01}+\alpha\left(\frac{\ket{0}+\ket{1}}{\sqrt{2}}\right)\ket{10}+\beta\left(\frac{\ket{0}-\ket{1}}{\sqrt{2}}\right)\ket{11}+\beta\left(\frac{\ket{0}-\ket{1}}{\sqrt{2}}\right)\ket{00}\right)\\
+            &= \frac{1}{2} (\alpha\ket{001}+\alpha\ket{101}+ \alpha\ket{010}+\alpha\ket{110}+
+            \beta\ket{011}-\beta\ket{111}+\beta\ket{000}-\beta\ket{100}) \\
+            &=\mathcolorbox{yellow}{\frac{1}{2}(\ket{00}(\alpha\ket{1}+\beta\ket{0})+\ket{01}(\alpha\ket{0}+\beta\ket{1})+\ket{10}(\alpha\ket{1}-\beta\ket{0})+\ket{11}(\alpha\ket{0}-\beta\ket{1}))} \\
+        \end{align*}
+
+        Notemos que la factorización que hicimos fue porque Alice tiene los primeros 2 bits por
+        lo que al medirlos en el siguiente paso determinara que tendrá que hacer Bob para
+        obtener el mismo qubit inicial de Alice. \vspace{.3cm}
+
+    \item $\mathbf{\ket{\psi_3}}$\vspace{.3cm}
+
+        Para este paso utilizaremos las compuertas de medición puestas en la nota y se definen
+        como sigue:
+
+        \begin{align*}
+            \hat{P}_{a_0}^{\ket{\psi}} = \ket{0}\bra{0} \\
+            \hat{P}_{a_1}^{\ket{\psi}} = \ket{1}\bra{1} \\
+            \hat{P}_{b_0}^{\beta_{02}} = \ket{0}\bra{0} \\
+            \hat{P}_{b_1}^{\beta_{02}} = \ket{1}\bra{1} \\
+        \end{align*}
+
+        Como vamos a medir 2 qubits utilizamos los operadores de medición:
+
+        \begin{align*}
+            \hat{P}_{00} = \ket{00}\bra{00} \\
+            \hat{P}_{01} = \ket{01}\bra{01} \\
+            \hat{P}_{10} = \ket{10}\bra{10} \\
+            \hat{P}_{11} = \ket{11}\bra{11} \\
+        \end{align*}
+
+        Vamos a calcular la probabilidad para cada una de estas 4 posibilidades: \vspace{.3cm}
+        
+        \begin{enumerate}[label=\arabic*.]
+            \item $p(00) = \bra{\psi_2} \hat{P}_{00} \ket{\psi_2}$ \vspace{.3cm}
+
+            Comenzamos calculando la parte derecha $\hat{P}_{00} \ket{\psi_2}$:
+
+                \begin{align*}
+                    \ket{00}\bra{00}\left[\frac{1}{2}(\ket{00}(\alpha\ket{1}+\beta\ket{0})+\ket{01}(\alpha\ket{0}+\beta\ket{1})+\ket{10}(\alpha\ket{1}-\beta\ket{0})+\ket{11}(\alpha\ket{0}-\beta\ket{1}))\right]
+                \end{align*}
+                \begin{align*}
+                    = \frac{1}{2} \ket{00}(\alpha \ket{1}+\beta\ket{0})
+                \end{align*}
+        
+
+            Este resultado parece sacado por magia pero es solo por ortonormalidad entre todos los
+            pares $\braket{0000}=1, \braket{0001}=0, \braket{0010}=0, \braket{0011}=0$. De manera
+            que solo sobrevive un pedacito, vamos a aplicar un argumento similar para todas las
+            otras $p(ij)$. Ahora, calculamos el total $\bra{\psi_2} \hat{P}_{00}\ket{\psi_2}$:
+
+            \begin{align*}
+                &=\frac{1}{2}
+                \left[(\bra{00}(\alpha^*\bra{1}+\beta^*\bra{0})+\bra{01}(\alpha^*\bra{0}+\beta^*\bra{1})+\bra{10}(\alpha^*\bra{1}-\beta^*\bra{0})+\bra{11}(\alpha^*\bra{0}-\beta^*\bra{1}))\right]&
+                \\
+                & \ \ \ \left[ \frac{1}{2}\ket{00}(\alpha \ket{1}+\beta\ket{0}) \right] \\
+                &= \frac{1}{4} \left[(\alpha^*\bra{1}+\beta^*\bra{0}) (\alpha \ket{1}+\beta\ket{0}) \right] &\\
+                &= \frac{1}{4} \left[ \alpha^* \alpha \braket{11} + \alpha^* \beta \braket{10} + \alpha \beta^* \braket{01} + \beta^* \beta \braket{00}  \right] &\\
+                &= \frac{1}{4} \left[ \alpha^* \alpha + \beta^* \beta  \right] &\\
+                &= \frac{1}{4} \left[ ||a||^2 + ||b||^2  \right] &\\
+                &= \mathcolorbox{yellow}{\frac{1}{4}} &
+            \end{align*}
+
+            Esta es la probabilidad del resultado $00$ en los qubits de Alice, y el estado post
+            medida se define como:
+
+            \begin{align*}
+                \ket{\psi}_{00}^{pm} = \frac{\hat{P}_{00}
+                \ket{\psi_2}}{\sqrt{\bra{\psi_2}\hat{P}_{00} \ket{\psi_2}}} =
+                \frac{\frac{1}{2} \ket{00}(\alpha\ket{1}+\beta\ket{0}) }{\sqrt{\frac{1}{4}}} =
+                \mathcolorbox{yellow}{\ket{00}(\alpha\ket{1}+\beta\ket{0})}
+            \end{align*}
+
+            Lo que estamos viendo es que estamos proyectando una parte del estado con una
+            probabilidad de $\frac{1}{4}$ y nos esta dando el estado post medición igual al qubit
+            que esta al lado de este. Vamos a omitir gran parte del calculo para las otras $P_{ij}$
+            pero se mantiene la idea:
+            \vspace{.3cm}
+
+            \item $p(01) = \bra{\psi_2} \hat{P}_{01} \ket{\psi_2}$ \vspace{.3cm}
+
+                Por lo mencionado anteriormente tenemos que:
+
+                \[
+                    p(01) = \bra{\psi_2}\left(\frac{1}{2} \ket{01}
+                    (\alpha\ket{0}+\beta\ket{1})\right) = \mathcolorbox{yellow}{\frac{1}{4}}
+                \]
+
+                De nuevo, la parte de en medio es por ortonormalidad entre el de medición y el
+                estado, mientras que el segundo paso es primero por ortonormalidad y después
+                producto tensorial para finalmente aplicar ortonormalidad una tercera vez y
+                por la propiedad de unitario de $\ket{\psi}$. Ahora el estado post medición es:
+
+            \begin{align*}
+                \ket{\psi}_{01}^{pm} = \frac{\hat{P}_{01}
+                \ket{\psi_2}}{\sqrt{\bra{\psi_2}\hat{P}_{01} \ket{\psi_2}}} =
+                \frac{\frac{1}{2} \ket{01}(\alpha\ket{0}+\beta\ket{1}) }{\sqrt{\frac{1}{4}}} =
+                \mathcolorbox{yellow}{\ket{01}(\alpha\ket{0}+\beta\ket{1})}
+            \end{align*}
+
+            \vspace{.3cm}
+
+            \item $p(10) = \bra{\psi_2} \hat{P}_{10} \ket{\psi_2}$ \vspace{.3cm}
+
+                Por lo mencionado anteriormente tenemos que:
+
+                \[
+                    p(10) = \bra{\psi_2}\left(\frac{1}{2} \ket{10}
+                    (\alpha\ket{1}-\beta\ket{0})\right) = \mathcolorbox{yellow}{\frac{1}{4}}
+                \]
+
+            \begin{align*}
+                \ket{\psi}_{10}^{pm} = \frac{\hat{P}_{10}
+                \ket{\psi_2}}{\sqrt{\bra{\psi_2}\hat{P}_{10} \ket{\psi_2}}} =
+                \frac{\frac{1}{2} \ket{10}(\alpha\ket{1}-\beta\ket{0}) }{\sqrt{\frac{1}{4}}} =
+                \mathcolorbox{yellow}{\ket{10}(\alpha\ket{1}-\beta\ket{0})}
+            \end{align*}
+
+            \vspace{.3cm}
+
+            \item $p(11) = \bra{\psi_2} \hat{P}_{11} \ket{\psi_2}$ \vspace{.3cm}
+
+                Por lo mencionado anteriormente tenemos que:
+
+                \[
+                    p(11) = \bra{\psi_2}\left(\frac{1}{2} \ket{11}
+                    (\alpha\ket{0}-\beta\ket{1})\right) = \mathcolorbox{yellow}{\frac{1}{4}}
+                \]
+
+            \begin{align*}
+                \ket{\psi}_{11}^{pm} = \frac{\hat{P}_{11}
+                \ket{\psi_2}}{\sqrt{\bra{\psi_2}\hat{P}_{11} \ket{\psi_2}}} =
+                \frac{\frac{1}{2} \ket{11}(\alpha\ket{0}-\beta\ket{1}) }{\sqrt{\frac{1}{4}}} =
+                \mathcolorbox{yellow}{\ket{11}(\alpha\ket{0}-\beta\ket{1})}
+            \end{align*}
+
+            \vspace{.3cm}
+        \end{enumerate}
+    
+    \item $\mathbf{\ket{\psi_4}}$\vspace{.3cm}
+
+        Entones nos quedan 4 casos, equiprobables: \vspace{.3cm}
+
+        \begin{enumerate}[label=\arabic*.]
+            \item \textbf{Caso 1: 00}
+                Sabemos que el estado post medida esta en la forma:
+                \[
+                    \ket{\psi}_{00}^{pm} = \ket{00} (\alpha\ket{1}+\beta\ket{0})  
+                \]
+                Por tanto Bob debe aplicar la puerta X, para regresar al qubit que quiso mandar,
+                esto porque la compuerta X hace "inversión de bits".
+                (notemos que los operadores de Pauli son idempotentes por lo que para regresar un X
+                podemos aplicar un X por ejemplo)
+
+                \[
+                    \ket{\psi_4} = \mathcolorbox{yellow}{\mathbb{I} \otimes \mathbb{I} \otimes (\hat{\sigma}_x)
+                    \left[ \ket{00} (\alpha\ket{1}+\beta\ket{0}) \right]}
+                \]
+
+                \vspace{.3cm}
+
+            \item \textbf{Caso 2: 01}
+                Sabemos que el estado post medida esta en la forma:
+                \[
+                    \ket{\psi}_{01}^{pm} = \ket{01} (\alpha\ket{0}+\beta\ket{1})
+                \]
+                Por tanto Bob debe aplicar la puerta $\mathbb{I}$ lo que es no hacer nada, para regresar al qubit que quiso
+                mandar. (pues ya es el qubit)
+
+
+                \[
+                    \ket{\psi_4} = \mathcolorbox{yellow}{\mathbb{I} \otimes \mathbb{I} \otimes \mathbb{I}
+                    \left[ \ket{01} (\alpha\ket{0}+\beta\ket{1}) \right]}
+                \]
+
+                \vspace{.3cm}
+
+            \item \textbf{Caso 3: 10}
+                Sabemos que el estado post medida esta en la forma:
+                \[
+                    \ket{\psi}_{10}^{pm} = \ket{10} (\alpha\ket{1}-\beta\ket{0})  
+                \]
+                Por tanto Bob debe aplicar la puerta X para "inversion de bits" y luego la compuerta
+                Z para "cambio de fase" (cambiar el signo de la $\beta$), para regresar al qubit que quiso mandar.
+
+                \[
+                    \ket{\psi_4} = \mathcolorbox{yellow}{\mathbb{I} \otimes \mathbb{I} \otimes (\hat{\sigma}_z\hat{\sigma}_x)
+                    \left[ \ket{10} (\alpha\ket{1}-\beta\ket{0}) \right]}
+                \]
+                \vspace{.3cm}
+
+            \item \textbf{Caso 4: 11}
+                Sabemos que el estado post medida esta en la forma:
+                \[
+                    \ket{\psi}_{11}^{pm} = \ket{11} (\alpha\ket{0}-\beta\ket{1})  
+                \]
+                Por tanto Bob debe aplicar la puerta la compuerta Z para "cambio de fase", para regresar al qubit que quiso mandar.
+
+                \[
+                    \ket{\psi_4} = \mathcolorbox{yellow}{\mathbb{I} \otimes \mathbb{I} \otimes (\hat{\sigma}_z)
+                    \left[ \ket{11} (\alpha\ket{0}-\beta\ket{1}) \right]}
+                \]
+                \vspace{.3cm}
+        \end{enumerate}
+\end{itemize}

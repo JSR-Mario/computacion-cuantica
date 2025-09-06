@@ -1,6 +1,64 @@
 \textbf{Adicionalmente, explica de manera detallada la estrategia que debe seguir Bob para
 transformar su qubit al estado $\ket{\psi}$.}\vspace{.2cm}
 
-\textcolor{bibi}{}
+\textcolor{bibi}{Propiedades}
 \begin{quote}
+    Para esta parte voy a mostrar las propiedades que utilice de los operadores de Pauli:
+    \begin{align*}
+        \hat{\sigma}_x =
+        \begin{pmatrix}
+            0 & 1\\
+            1 & 0
+        \end{pmatrix}
+        , \ \ \ \ket{\psi} = 
+        \begin{pmatrix}
+            \alpha\\
+            \beta
+        \end{pmatrix}
+    \end{align*}
+
+    \begin{align*}
+        \hat{\sigma}_x\ket{\psi} = 
+        \begin{pmatrix}
+            0*\alpha +1*\beta\\
+            1*\alpha +0*\beta
+        \end{pmatrix}
+        = 
+        \begin{pmatrix}
+            \beta\\
+            \alpha
+        \end{pmatrix}
+    \end{align*}
+
+    Vemos que evidentemente la $\hat{\sigma}_x$ no hace mas que la inversion. Y ahora para la
+    $\hat{\sigma}_z$ vamos a probar que invierte la fase:
+
+    \begin{align*}
+        \hat{\sigma}_z =
+        \begin{pmatrix}
+            1 & 0\\
+            0 & -1
+        \end{pmatrix}
+        , \ \ \ \ket{\psi} = 
+        \begin{pmatrix}
+            \alpha\\
+            \beta
+        \end{pmatrix}
+    \end{align*}
+
+     \begin{align*}
+        \hat{\sigma}_z\ket{\psi} = 
+        \begin{pmatrix}
+            1*\alpha +0*\beta\\
+            0*\alpha -1*\beta
+        \end{pmatrix}
+        = 
+        \begin{pmatrix}
+            \alpha\\
+            -\beta
+        \end{pmatrix}
+    \end{align*}
+
+    Por tanto los pasos que describimos para recuperar el qubit original dependiendo del caso son
+    validos. 
 \end{quote}
