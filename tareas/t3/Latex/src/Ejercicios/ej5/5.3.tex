@@ -3,3 +3,28 @@
 $$
 S(\rho _A) = -Tr(\rho _A \ log_2(\rho _A))
 $$
+
+Empezamos calculando los eigenvalores de la matriz para poder usar el formulazo:
+
+$$S(\rho_A) = - \sum_{i} \lambda_i log_2(\lambda_i)$$
+
+Como la matriz es simétrica sus eigenvalores son:  
+\begin{align*}
+    \lambda_1 &= \frac{1}{2} + \frac{1}{2} cos(2t) = \frac{1+cos(2t)}{2} \\
+    \lambda_2 &= \frac{1}{2} - \frac{1}{2} cos(2t) = \frac{1-cos(2t)}{2}
+\end{align*}
+
+Simplificando con identidades trigonometricas tenemos:
+\begin{align*}
+    \lambda_1 &=  cos^2(t)\\
+    \lambda_2 &=  sin^2(t)
+\end{align*}
+
+Sustituyendo en el formulazo:
+\begin{align*}
+    S(\rho_A) &= - \left( \lambda_1 \ log_2(\lambda_1) + \lambda_2 \ log_2(\lambda_2) \right) \\
+    &= - \left( cos^2(t) \ log_2(cos^2(t)) + sin^2(t) \ log_2(sin^2(t)) \right) \\
+    &= - cos^2(t) \ log_2(cos^2(t)) - sin^2(t) \ log_2(sin^2(t)) \\
+\end{align*}
+
+\vspace{.3cm}

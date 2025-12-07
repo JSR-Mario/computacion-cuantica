@@ -1,2 +1,49 @@
 \textbf{Use las relaciones anteriores para reconstruir $\rho$ únicamente a partir de
-$\braket{X}, \braket{Y},\braket{Z}$.}
+$\braket{X}, \braket{Y},\braket{Z}$.} \vspace{.3cm}
+
+Usamos las siguientes identidad trigonométricas:
+
+$$
+\cos^2{\frac{\theta}{2}} = \frac{1+\cos{\theta}}{2}, \ \ \ \sin^2{\frac{\theta}{2}} =
+\frac{1-\cos{\theta}}{2}, \ \ \ 2cos \frac{\theta}{2} sin \frac{\theta}{2} = sin \theta
+$$
+
+Sustituyendo 
+$$
+\rho =
+\begin{pmatrix}
+\frac{1+\cos{\theta}}{2} &  \frac{1}{2} sin \theta \ e ^{-i \phi} \\
+\frac{1}{2} sin \theta \ e ^{i \phi} & \frac{1-\cos{\theta}}{2}
+\end{pmatrix}
+$$ \vspace{.3cm}
+
+Como $\braket{X}=sin \theta cos \phi$, $\braket{Y}=sin \theta sin \phi$, $\braket{Z}=cos \theta$,
+obtenemos:
+
+\begin{align*}
+\rho &= \frac{1}{2}
+\begin{pmatrix}
+1+\cos{\theta} & sin \theta \ e ^{-i \phi} \\
+sin \theta \ e ^{i \phi} & 1-\cos{\theta}
+\end{pmatrix} \\ 
+     &= \frac{1}{2}
+\begin{pmatrix}
+1+\braket{Z} & sin \theta \ e ^{-i \phi} \\
+sin \theta \ e ^{i \phi} & 1-\braket{Z}
+\end{pmatrix} \\
+&= \frac{1}{2}
+\begin{pmatrix}
+1+\braket{Z} & sin \theta \ (cos \phi -i sin \phi) \\
+sin \theta \ (cos \phi +i sin \phi) & 1-\braket{Z}
+\end{pmatrix} \\
+&= \frac{1}{2}
+\begin{pmatrix}
+1+\braket{Z} & sin (\theta) cos (\phi) - i \ sin (\theta) sin (\phi) \\
+sin (\theta) cos (\phi) + i \ sin (\theta) sin (\phi) & 1-\braket{Z}
+\end{pmatrix} \\
+&= \frac{1}{2}
+\begin{pmatrix}
+1+\braket{Z} & \braket{X} - i \braket{Y} \\
+\braket{X} + i \ \braket{Y} & 1-\braket{Z}
+\end{pmatrix} \\
+\end{align*}

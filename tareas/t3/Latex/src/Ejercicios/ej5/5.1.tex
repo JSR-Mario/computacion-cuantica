@@ -1,1 +1,49 @@
-\textbf{Calcule la matriz densidad $\rho (t) = \ket{\psi (t)} \bra{\psi (t)}$}
+\textbf{Calcule la matriz densidad $\rho (t) = \ket{\psi (t)} \bra{\psi (t)}$} \vspace{.3cm}
+
+Tenemos:
+$$
+\ket{+} = \frac{\ket{0}+\ket{1}}{\sqrt{2}}, \ \ \ket{\psi_0} =
+\frac{1}{2}(\ket{00}+\ket{01}+\ket{10}+\ket{11})
+$$
+
+Recordamos ademas que:
+$$
+Z \ket{0} = 1 \ket{0}, \ \ \ Z \ket{1} = -1 \ket{1}
+$$
+
+De aqui sale que:
+\begin{align*}
+    \ket{00} &= 1*1 = 1 \\
+    \ket{01} &= 1*(-1) = -1 \\
+    \ket{10} &= (-1)*1 = -1 \\
+    \ket{00} &= 1*1 = 1 \\
+\end{align*}
+
+Por tanto:
+\begin{align*}
+    U(t)\ket{00} &= e^{-it} \ket{00}, \\
+    U(t)\ket{11} &= e^{-it} \ket{11}, \\
+    U(t)\ket{01} &= e^{it} \ket{01}, \\
+    U(t)\ket{10} &= e^{it} \ket{10}
+\end{align*}
+
+El estado en el tiempo t: 
+$$
+\ket{\psi(t)} = \frac{1}{2} (e^{-it}\ket{00}+e^{it}\ket{01}+e^{it}\ket{10}+e^{-it}\ket{11})
+$$
+
+Ahora, tenemos que:
+$$
+e^{\pm 2it} = cos(2t) \pm i \ sin (2t) 
+$$
+
+$$\frac{1}{4}
+\begin{pmatrix}
+    1 & cos(2t)-i \ sin(2t) & cos(2t)-i \ sin(2t) & 1\\   
+    cos(2t)+i \ sin(2t) & 1 & 1 & cos(2t)+i \ sin(2t)\\   
+    cos(2t)+i \ sin(2t) & 1 & 1 & cos(2t)+i \ sin(2t)\\   
+    1 & cos(2t)-i \ sin(2t) & cos(2t)-i \ sin(2t) & 1\\   
+\end{pmatrix}
+$$
+
+\vspace{.3cm}

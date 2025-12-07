@@ -1,1 +1,145 @@
-\textbf{Encuentre los autovectores normalizados de Y.}
+\textbf{Encuentre los autovectores normalizados de Y.} \vspace{.3cm}
+
+\begin{itemize}
+    \item \textbf{Autovector para $\lambda_1 = 1$} \vspace{.3cm}
+
+        Formamos Y-$\lambda_1 I$:
+            $$
+            Y-\lambda_1 I =
+            \begin{pmatrix}
+            -1 & -i\\
+            i & -1
+            \end{pmatrix}
+            $$
+
+        Resolver $(Y-I)v=0$. Si $v=(x,y)^T$:
+        $$\begin{cases}
+            -x-yi = 0 \\
+            xi -y = 0
+        \end{cases}$$
+
+        Tomando la segunda ecuación tenemos que $y=ix$ sustituyendo en la primera $-x-i(ix)=0$
+        tenemos que $0=0$ por lo que las ecuaciones son dependientes. \vspace{.3cm}
+
+        De la segunda ecuación podemos escribir cualquier vector solución como:
+        $$v=
+        \begin{pmatrix}
+            x \\
+            ix
+        \end{pmatrix}=x
+        \begin{pmatrix}
+            1 \\
+            i
+        \end{pmatrix}
+        $$
+
+        Si v es autovector, cv tambien lo es para cualquier c diferente de 0, tomamos a $x=1$.
+        \vspace{.3cm}
+
+        Normalizamos el vector:
+
+        $$
+        ||v|| = \sqrt{|1|^2+|i|^2} = \sqrt{1+1} = \sqrt{2}
+        $$
+
+        Por tanto el vector normalizado es:
+
+        $$\frac{1}{\sqrt{2}}
+        \begin{pmatrix}
+            1 \\
+            i
+        \end{pmatrix}
+        $$
+
+        Verificamos que sea correcto: \vspace{.3cm}
+
+        $$
+        Yv = \begin{pmatrix}
+            0 & -i\\
+            i & 0
+            \end{pmatrix}
+        \frac{1}{\sqrt{2}}
+        \begin{pmatrix}
+            1 \\
+            i
+        \end{pmatrix}=\frac{1}{\sqrt{2}}
+        \begin{pmatrix}
+            1 \\
+            i
+        \end{pmatrix}=1*v=\lambda_1 *v
+        $$
+        \vspace{.3cm}
+
+    \item \textbf{Autovector para $\lambda_2=-1$}\vspace{.3cm}
+
+        Formamos Y-$\lambda_2 I$:
+            $$
+            Y-\lambda_2 I =
+            \begin{pmatrix}
+            1 & -i\\
+            i & 1
+            \end{pmatrix}
+            $$
+
+        Resolver $(Y+I)v=0$. Si $v=(x,y)^T$:
+        $$\begin{cases}
+            x-yi = 0 \\
+            xi+y = 0
+        \end{cases}$$
+
+        Tomando la primera ecuación tenemos $x=yi$ sustituyendo en la segunda $(yi)i+y=0$ tenemos
+        entonces que $-y+y=0$ y $0=0$ aplicamos lo mismo.\vspace{.3cm}
+
+        $$v=
+        \begin{pmatrix}
+            yi \\
+            y
+        \end{pmatrix}=y
+        \begin{pmatrix}
+            i \\
+            1
+        \end{pmatrix}
+        $$
+
+        Si v es autovector, cv tambien lo es para cualquier c diferente de 0, tomamos a $y=1$.
+        \vspace{.3cm}
+
+        Normalizamos el vector:
+
+        $$
+        ||v|| = \sqrt{|i|^2+|1|^2} = \sqrt{1+1} = \sqrt{2}
+        $$
+
+        Por tanto el vector normalizado es:
+
+        $$\frac{1}{\sqrt{2}}
+        \begin{pmatrix}
+            i \\
+            1
+        \end{pmatrix}
+        $$
+
+        Verificamos que sea correcto: \vspace{.3cm}
+
+        $$
+        Yv = \begin{pmatrix}
+            0 & -i\\
+            i & 0
+            \end{pmatrix}
+        \frac{1}{\sqrt{2}}
+        \begin{pmatrix}
+            i \\
+            1
+        \end{pmatrix}=\frac{1}{\sqrt{2}}
+        \begin{pmatrix}
+            -i \\
+            -1
+        \end{pmatrix}=- \frac{1}{\sqrt{2}}
+        \begin{pmatrix}
+            i \\
+            1
+        \end{pmatrix}
+        =-1*v=\lambda_2 *v
+        $$
+        \vspace{.3cm}
+\end{itemize}

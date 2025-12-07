@@ -1,1 +1,31 @@
-\textbf{Exprese la matriz densidad $\rho = \ket{\psi}\bra{\psi}$}
+\textbf{Exprese la matriz densidad $\rho = \ket{\psi}\bra{\psi}$} \vspace{.3cm}
+
+$$
+\bra{\psi} = \cos{\frac{\theta}{2}} \bra{0} + e ^{-i \phi} \sin{\frac{\theta}{2}}\bra{1}
+$$
+
+Calculo $\rho$
+
+\begin{align*}
+    \rho &= \left( \cos{\frac{\theta}{2}} \ket{0} + e^{i \phi} \sin{\frac{\theta}{2}} \ket{1} \right)
+    \left(\cos{\frac{\theta}{2}} \bra{0} + e ^{-i \phi} \sin{\frac{\theta}{2}}\bra{1} \right)\\
+    &= \cos^2{\frac{\theta}{2}} \ket{0}\bra{0} + \cos{\frac{\theta}{2}} e ^{-i \phi}
+    \sin{\frac{\theta}{2}}\ket{0}\bra{1} +  \cos{\frac{\theta}{2}} e^{i \phi} \sin{\frac{\theta}{2}}
+    \ket{1}\bra{0} +sin^2{\frac{\theta}{2}}\ket{1}\bra{1}
+\end{align*}
+
+Cada entrada de la matriz tiene la siguiente definición:
+
+$$
+\rho _{ij} = \bra{i} \rho \ket{j}, \ \ i,j \in \{ 0,1 \}
+$$
+
+Obtenemos entonces:
+$$
+\rho =
+\begin{pmatrix}
+\cos^2{\frac{\theta}{2}} & \cos{\frac{\theta}{2}} e ^{-i \phi} \sin{\frac{\theta}{2}}\\
+\cos{\frac{\theta}{2}} e^{i \phi} \sin{\frac{\theta}{2}} & sin^2{\frac{\theta}{2}}
+\end{pmatrix}
+$$
+\vspace{.3cm}

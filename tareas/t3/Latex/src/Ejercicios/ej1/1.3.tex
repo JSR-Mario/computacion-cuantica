@@ -1,1 +1,41 @@
-\textbf{Verifique que los autovectores forman una base ortonormal de $\mathbb{C}^2$}
+\textbf{Verifique que los autovectores forman una base ortonormal de $\mathbb{C}^2$} \vspace{.3cm}
+
+$$
+u = \frac{1}{\sqrt{2}}
+        \begin{pmatrix}
+            1 \\
+            i
+        \end{pmatrix} \ \ \ \ v=
+    \frac{1}{\sqrt{2}}
+        \begin{pmatrix}
+            i \\
+            1
+        \end{pmatrix}
+$$
+
+
+\begin{itemize}
+    \item \textbf{Normalización}
+        Por construcción estan normalizados pero verificamos:
+        $$
+        \braket{u,u} = \frac{1}{2} (|1|^2+|i|^2) = \frac{1}{2} (1+1)= \frac{1}{2} 2= 1
+        $$
+        $$
+        \braket{v,v} = \frac{1}{2} (|i|^2+|1|^2) = \frac{1}{2} (1+1)= \frac{1}{2} 2= 1
+        $$
+
+        Ambos están normalizados como esperábamos. \vspace{.3cm}
+    \item \textbf{Ortogonalidad}
+        $$
+        \braket{u,v} = \frac{1}{2} (\bar{1}*i + \bar{i}*1) = \frac{1}{2} (i-i) = 0
+        $$
+
+        Como el producto interno es 0, los vectores son ortogonales. \vspace{.3cm}
+    \item \textbf{Independencia}
+
+        Como son ortogonales son independientes. 
+\end{itemize}
+
+Por tanto los vectores $u,v$ forman una base ortonormal de $\mathbb{C}^2$
+
+\vspace{.3cm}

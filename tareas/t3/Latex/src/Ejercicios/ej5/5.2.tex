@@ -3,3 +3,38 @@
 $$
 \rho _A (t) = Tr_B(\rho(t))
 $$
+
+Tenemos entonces:
+$$
+\ket{\psi(t)} = \frac{1}{2} (e^{-it}\ket{00}+e^{it}\ket{01}+e^{it}\ket{10}+e^{-it}\ket{11})
+$$
+
+Definimos los vectores asociados a $b=0,1$:
+\begin{align*}
+    \ket{\psi_0}_A = (\mathbb{I} \otimes \bra{0})\ket{\psi(t)}= \frac{1}{2}
+    (e^{-it}\ket{0}+e^{it}\ket{1})
+\end{align*}
+
+Usando $\rho_A = \sum_b \ket{\psi_b}\bra{\psi_b}$, calculamos:
+
+$$
+\ket{\phi_0}\bra{\phi_0} = \frac{1}{4} \begin{pmatrix}1 & e^{-2it} \\ e^{2it} & 1\end{pmatrix}
+$$
+
+$$
+\ket{\phi_1}\bra{\phi_1} = \frac{1}{4} \begin{pmatrix}1 & e^{2it} \\ e^{-2it} & 1\end{pmatrix}
+$$
+
+Sumando:
+$$
+\rho_A = \ket{\phi_0} \bra{\phi_0} + \ket{\phi_1} \bra{\phi_1} = \frac{1}{4} 
+\begin{pmatrix}
+2 & e^{2it} + e^{-2it}\\ 
+e^{-2it} + e^{2it} & 2
+\end{pmatrix} = \frac{1}{2} \begin{pmatrix}
+1 & cos(2t)\\ 
+cos(2t) & 1
+\end{pmatrix}
+$$
+
+\vspace{.3cm}

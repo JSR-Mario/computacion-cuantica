@@ -1,1 +1,35 @@
 \textbf{Verifique que la matriz obtenida corresponde a un estado puro (pista: use $Tr(\rho ^2)$).}
+
+\begin{align*}
+    \rho &= \frac{1}{2}
+    \begin{pmatrix}
+    1+\braket{Z} & \braket{X} - i \braket{Y} \\
+    \braket{X} + i \ \braket{Y} & 1-\braket{Z}
+    \end{pmatrix}\\
+\end{align*}
+\begin{align*}
+    Tr(\rho^2) &= \frac{1}{4} ((1+\braket{Z})^2 + |\braket{X} +i\braket{Y}|^2 + |\braket{X} +
+    i\braket{Y}|^2 + (1-\braket{Z})^2) \\
+               &= \frac{1}{4} ((1+\braket{Z})^2 + (1-\braket{Z})^2 +2(\braket{X}^2 + \braket{Y}^2))
+               \\
+               &= \frac{1}{4} (2+2\braket{Z}^2 +2(\braket{X}^2 + \braket{Y}^2))
+               \\
+                &= \frac{1}{2} (1+\braket{X}^2 + \braket{Y}^2+\braket{Z}^2 )
+               \\
+\end{align*}
+
+Usando las identidades trigonométricas:
+
+$$
+\braket{X}^2 + \braket{Y}^2+\braket{Z}^2 = sin^2 (\theta) cos ^2 (\phi) + sin^2 (\theta) sin^2
+(\phi) + cos ^2 (\theta) = sin^2 (\theta) + cos ^2 (\theta) = 1
+$$
+
+Sustituyo en la original:
+
+\begin{align*}
+    Tr(\rho^2) = \frac{1}{2} (1+1) = 1
+\end{align*}
+
+Por lo que $\rho$ representa un estado puro
+\vspace{.3cm}

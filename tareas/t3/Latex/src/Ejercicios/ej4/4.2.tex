@@ -1,1 +1,36 @@
-\textbf{Calcule la evolución exacta $U(t)=e^{-iHt}$}
+\textbf{Calcule la evolución exacta $U(t)=e^{-iHt}$} \vspace{.3cm}
+
+Tenemos que :
+$$
+Z^2 = \begin{pmatrix}1 & 0 \\ 0 & -1\end{pmatrix}\begin{pmatrix}1 & 0 \\ 0 & -1\end{pmatrix} =
+\begin{pmatrix}1 & 0 \\ 0 & 1\end{pmatrix} = I
+$$
+
+Entonces tenemos que:
+$$
+H^2 = (Z \otimes Z)^2 = Z^2 \otimes Z^2 = I \otimes I = I_4
+$$
+
+Como $H^{2k}=I_4$ y $H^{2k+1}=H$ entonces, usando igual la serie de la exponencial igual que arriba
+tenemos:
+
+$$
+e^{iHt} = cos(t) I_4 - i sin(t)H
+$$
+
+Por lo que tenemos:
+$$U(t) = cos(t)
+\begin{pmatrix}
+    1 & 0 & 0 & 0 \\
+    0 & 1 & 0 & 0 \\
+    0 & 0 & 1 & 0 \\ 
+    0 & 0 & 0 & 1
+\end{pmatrix} - i sin(t)\begin{pmatrix}
+    1 & 0 & 0 & 0 \\
+    0 &-1 & 0 & 0 \\
+    0 & 0 &-1 & 0 \\ 
+    0 & 0 & 0 & 1
+\end{pmatrix}
+$$
+
+\vspace{.3cm}

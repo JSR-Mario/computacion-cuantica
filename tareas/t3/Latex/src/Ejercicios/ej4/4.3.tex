@@ -2,4 +2,13 @@
 
 $$e^{-itZ \otimes Z} = CNOT(I \otimes R_Z (2t)) CNOT$$
 
-\textbf{represéntelo como circuito cuántico}
+\textbf{represéntelo como circuito cuántico} \vspace{.3cm}
+
+\begin{center}
+\begin{quantikz}
+\lstick{$q_0$} & \ctrl{1} & \qw & \ctrl{1} & \qw \\
+\lstick{$q_1$} & \targ{} & \gate{R_z(2t)} & \targ{} & \qw
+\end{quantikz}
+\end{center}
+
+\vspace{.3cm}
